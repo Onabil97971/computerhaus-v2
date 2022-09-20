@@ -45,3 +45,11 @@ function navToggle() {
 }
 
 btn.addEventListener("click", navToggle);
+
+document.onclick = function (e) {
+  if (e.target.id !== "menu-btn" && e.target.id !== "menu") {
+    btn.classList.toggle("open");
+    nav.classList.toggle("hidden");
+    document.body.classList.toggle("no-scroll");
+  }
+};
