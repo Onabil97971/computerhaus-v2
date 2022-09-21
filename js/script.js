@@ -37,6 +37,18 @@ currentYear.textContent = updatedYear;
 // menu
 const btn = document.getElementById("menu-btn");
 const nav = document.getElementById("menu");
+const navbar = document.getElementById("navbar");
+
+document.onclick = function (e) {
+  if (
+    e.target.id !== "menu-btn" &&
+    e.target.id !== "menu" &&
+    e.target.id !== "navbar"
+  ) {
+    btn.classList.remove("open");
+    nav.classList.add("hidden");
+  }
+};
 
 function navToggle() {
   btn.classList.toggle("open");
@@ -45,11 +57,3 @@ function navToggle() {
 }
 
 btn.addEventListener("click", navToggle);
-
-// document.onclick = function (e) {
-//   if (e.target.id !== "menu-btn" && e.target.id !== "menu") {
-//     btn.classList.toggle("open");
-//     nav.classList.toggle("hidden");
-//     document.body.classList.toggle("no-scroll");
-//   }
-// };
